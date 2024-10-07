@@ -253,6 +253,7 @@ class ModbusThermostat(BaseStructPlatform, RestoreEntity, ClimateEntity):
                     self._attr_swing_modes.append(swing_mode)
 
         if CONF_HVAC_ONOFF_REGISTER in config:
+            onoff_config = config[CONF_HVAC_ONOFF_REGISTER]
             self._hvac_onoff_register = config[CONF_HVAC_ONOFF_REGISTER]
             self._hvac_onoff_write_registers = config[CONF_WRITE_REGISTERS]
             if HVACMode.OFF not in self._attr_hvac_modes:
